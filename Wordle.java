@@ -28,9 +28,9 @@ public class Wordle {
     public static void computeFeedback(String secret, String guess, char[] resultRow) {
         for(int i=0; i<guess.length(); i++)
         {
-            if(containsChar(secret, guess.charAt(i)))
+            if(containsChar(secret, guess.toLowerCase().charAt(i)))
             {
-                if(secret.charAt(i) == guess.charAt(i))
+                if(secret.charAt(i) == guess.toLowerCase().charAt(i))
                 {
                     resultRow[i] = 'G';
                 }
@@ -50,7 +50,7 @@ public class Wordle {
     public static void storeGuess(String guess, char[][] guesses, int row) {
 		for(int i=0; i<guess.length(); i++)
         {
-            guesses[row][i] = guess.charAt(i);
+            guesses[row][i] = guess.toLowerCase().charAt(i);
         }
     }
 
@@ -111,7 +111,7 @@ public class Wordle {
             
             while (!valid) {
                 System.out.print("Enter your guess (5-letter word): ");
-                guess = inp.readLine();
+                guess = inp.readLine().toLowerCase();
                 
                 if (guess.length() != 5) {
                     System.out.println("Invalid word. Please try again.");
