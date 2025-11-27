@@ -2,7 +2,7 @@ public class Wordle {
 
 
     public static String[] readDictionary(String filename) {
-        In in = new In("dictionary.txt");
+        In in = new In(filename);
         String[] words = in.readAllLines();
         return words;
     }
