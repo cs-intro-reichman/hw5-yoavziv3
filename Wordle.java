@@ -10,7 +10,7 @@ public class Wordle {
 
     public static String chooseSecretWord(String[] dict) {
         int i = (int) (Math.random() * dict.length);
-        return dict[i].toLowerCase();
+        return dict[i];
     }
 
 
